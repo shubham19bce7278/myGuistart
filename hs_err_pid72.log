@@ -1,0 +1,66 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f029df01401, pid=72, tid=78
+#
+# JRE version: OpenJDK Runtime Environment (11.0.9.1+1) (build 11.0.9.1+1-Ubuntu-0ubuntu1.18.04)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.9.1+1-Ubuntu-0ubuntu1.18.04, mixed mode, sharing, tiered, compressed oops, serial gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x2401]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/runner/myGuistart/core.72)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-lts
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: Main
+
+Host: Intel(R) Xeon(R) CPU @ 2.30GHz, 4 cores, 512M, Ubuntu 18.04.5 LTS
+Time: Sat Jan  2 11:58:14 2021 UTC elapsed time: 71.992570 seconds (0d 0h 1m 11s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f0298059800):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=78, stack(0x00007f029c463000,0x00007f029c564000)]
+
+Stack: [0x00007f029c463000,0x00007f029c564000],  sp=0x00007f029c5611e0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x2401]
+C  [libjimage.so+0x30ea]
+C  [libjimage.so+0x35c6]  JIMAGE_FindResource+0xd6
+V  [libjvm.so+0x5bf44e]
+V  [libjvm.so+0x5c21b0]
+V  [libjvm.so+0xe427d5]
+V  [libjvm.so+0xe4008a]
+V  [libjvm.so+0xe42d62]
+V  [libjvm.so+0x675dcd]
+V  [libjvm.so+0x86faac]
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@11.0.9.1
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x87f359]
+V  [libjvm.so+0x87e145]
+V  [libjvm.so+0xc0680c]
+V  [libjvm.so+0xe7b37f]
+V  [libjvm.so+0xe77acf]
+V  [libjvm.so+0xc1977e]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@11.0.9.1
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00007f028f89e270
+
+Register to memory mapping:
+
+RAX=0x0000000000001495 is an unknown value
+RBX=0x00007f029c561291 is pointing into the stack for thread: 0x00007f0298059800
+RCX=0x00007f028f89901c is an unknown value
+RDX=0x0000000000001495 is an unknown value
+RSP=0x00007f029c5611e0 is pointing into the stack for thread: 0x00007f0298059800
+RBP=0x00007f029c561200 is pointing into the stack for thread: 0x00007f0298059800
+RSI=0x00007f029c561290 is pointing into the stack for thread: 0x00007f0298059800
+RDI=0x00007f029e104030: <offset 0x0000000000205030> in /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so at 0x00007f029deff000
+R8 =0x0 is NULL
+R9 =
